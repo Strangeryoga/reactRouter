@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, NavLink} from 'react-router-dom'
 
 function Footer() {
   return (
@@ -19,36 +19,43 @@ function Footer() {
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Resources</h2>
                             <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <Link to="/" className="hover:underline">
+                                <li className='mb-3'>
+                                    <NavLink
+                                    to="/"
+                                       className={({isActive}) => 
+                                       `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                    >
                                         Home
-                                    </Link>
+
+                                    </NavLink>
                                 </li>
-                                <li>
-                                    <Link to="/about" className="hover:underline">
-                                        About
-                                    </Link>
+                                <li className=''>
+                                  <NavLink
+                                  to="/about"
+                                      className={({isActive}) =>
+                                      `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                                    }
+                                  >
+                                    About
+                                  </NavLink>
                                 </li>
                             </ul>
                         </div>
                         <div>
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">Follow us</h2>
                             <ul className="text-gray-500 font-medium">
-                                <li className="mb-4">
-                                    <a
-                                        href="https://github.com/hiteshchoudhary"
-                                        className="hover:underline"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
-                                        Github
-                                    </a>
-                                </li>
-                                <li>
-                                    <Link to="/" className="hover:underline">
-                                        Discord
-                                    </Link>
-                                </li>
+                    <li>
+                        <NavLink
+                        to="/github"
+                            className={({isActive}) =>
+                                `block py-2 pr-4 pl-3 duration-200 ${isActive ? "text-orange-700" : "text-gray-500"} border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 hover:text-orange-700 lg:p-0`
+                            }
+                        >
+                            Github
+                        </NavLink>
+                    </li>
+                                
                             </ul>
                         </div>
                         <div>
@@ -72,8 +79,8 @@ function Footer() {
                 <div className="sm:flex sm:items-center sm:justify-between">
                     <span className="text-sm text-gray-500 sm:text-center">
                         © 2023
-                        <a href="https://hiteshchoudhary.com/" className="hover:underline">
-                            hiteshchoudhary
+                        <a href="https://github.com/Strangeryoga" className="hover:underline">
+                            Strangeryoga
                         </a>
                         . All Rights Reserved.
                     </span>
